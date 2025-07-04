@@ -1,12 +1,17 @@
+// Hero.jsx
 import React, { useState, useEffect } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaCode } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 
+/**
+ * Hero component - Main landing section
+ */
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
 
+  // Check if device is mobile
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
@@ -17,31 +22,37 @@ const Hero = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Social media links data
   const socialLinks = [
-    { icon: <FaLinkedin className='w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12'/>, url: "https://linkedin.com/in/yourprofile", color: "text-blue-400" },
-    { icon: <FaGithub className='w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12'/>, url: "https://github.com/yourusername", color: "text-gray-200" },
-    { icon: <SiLeetcode className='w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12'/>, url: "https://leetcode.com/yourprofile", color: "text-yellow-400" },
-    { icon: <FaCode className='w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12'/>, url: "https://yourportfolio.com", color: "text-purple-400" },
+    { icon: <FaLinkedin className='w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10'/>, url: "https://www.linkedin.com/in/bunga-kousalya-900938299?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", color: "text-blue-400" },
+    { icon: <FaGithub className='w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10'/>, url: "https://github.com/Bungakousalya", color: "text-gray-200" },
+    { icon: <SiLeetcode className='w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10'/>, url: "https://leetcode.com/B_kousalya/", color: "text-yellow-400" },
   ];
 
   return (
     <section className='relative w-full min-h-screen mx-auto'>
-      <div className='absolute inset-0 top-[140px] sm:top-[120px] lg:top-[150px] max-w-7xl mx-auto flex items-start gap-3 sm:gap-5 px-4 sm:px-6'>
+      {/* Main content container */}
+      <div className='absolute inset-0 top-[120px] sm:top-[140px] lg:top-[150px] max-w-7xl mx-auto flex items-start gap-3 sm:gap-5 px-4 sm:px-6'>
+        {/* Vertical line decoration - hidden on mobile */}
         <div className='hidden sm:flex flex-col justify-center items-center mt-5'>
           <div className='w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#915eff]'/>
           <div className='w-1 h-32 sm:h-80 bg-gradient-to-b from-[#915eff] to-transparent'/>
         </div>
+        
+        {/* Main content */}
         <div className='flex-1'>
+          {/* Name heading with responsive text size */}
           <motion.h1
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight'
+            className='text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight' // Larger text on bigger screens
           >
             Hi, I'm <span className='text-[#915eff]'>Kousalya</span>
           </motion.h1>
           
-          <div className='mt-2 text-base sm:text-lg md:text-xl font-medium text-gray-300'>
+          {/* Animated typing text with responsive size */}
+          <div className='mt-2 text-lg sm:text-xl md:text-2xl font-medium text-gray-300'>
             <TypeAnimation
               sequence={[
                 'Aspiring Web Developer',
@@ -59,23 +70,25 @@ const Hero = () => {
             />
           </div>
           
+          {/* Description paragraph with responsive text size */}
           <motion.p
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className='text-sm sm:text-base md:text-lg lg:text-xl mt-6 sm:mt-8 text-gray-200 leading-relaxed max-w-4xl'
+            className='text-sm sm:text-base md:text-lg mt-4 sm:mt-6 text-gray-200 leading-relaxed max-w-4xl' // Smaller text on mobile
           >
             A dedicated computer science student with a strong passion for building innovative web applications and solving complex technical challenges. Through hands-on projects and continuous learning.
           </motion.p>
 
-          <motion.div className="flex gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-12 justify-center sm:justify-start">
+          {/* Social links with responsive sizing and animations */}
+          <motion.div className="flex gap-4 sm:gap-6 mt-6 sm:mt-8 justify-center sm:justify-start">
             {socialLinks.map((link, index) => (
               <motion.a
                 key={index}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${link.color} text-2xl sm:text-3xl md:text-4xl`}
+                className={`${link.color}`}
                 initial={{ 
                   opacity: 0,
                   y: 20,
@@ -139,24 +152,25 @@ const Hero = () => {
             ))}
           </motion.div>
 
+          {/* Action buttons with responsive sizing */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.5 }}
-            className='flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 sm:mt-12'
+            className='flex flex-col sm:flex-row gap-3 mt-6 sm:mt-8'
           >
             <motion.a
               href="/resume.pdf"
               whileHover={{ scale: isMobile ? 1.02 : 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto text-center px-6 sm:px-8 py-3 border-2 border-purple-400 text-purple-400 rounded-lg font-semibold hover:bg-purple-400 hover:text-white transition-all duration-300 text-sm sm:text-base"
+              className="w-full sm:w-auto text-center px-4 sm:px-6 py-2 sm:py-3 border-2 border-purple-400 text-purple-400 rounded-lg font-semibold hover:bg-purple-400 hover:text-white transition-all duration-300 text-sm sm:text-base"
             >
               Download Resume 📄
             </motion.a>
             <motion.button
               whileHover={{ scale: isMobile ? 1.02 : 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className='w-full sm:w-auto px-6 sm:px-8 py-3 bg-transparent border-2 border-gray-400 text-gray-300 rounded-lg font-semibold hover:bg-gray-700 hover:border-gray-300 transition-all duration-300 text-sm sm:text-base'
+              className='w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-transparent border-2 border-gray-400 text-gray-300 rounded-lg font-semibold hover:bg-gray-700 hover:border-gray-300 transition-all duration-300 text-sm sm:text-base'
             >
               Let's Connect 💬
             </motion.button>
@@ -164,12 +178,13 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className='absolute bottom-8 sm:bottom-10 left-1/2 transform -translate-x-1/2 z-10'>
+      {/* Scroll indicator - positioned differently on mobile */}
+      <div className='absolute bottom-8 sm:bottom-12 left-1/2 transform -translate-x-1/2 z-10'>
         <a href="#about">
-          <div className='w-[30px] h-[54px] sm:w-[35px] sm:h-[64px] rounded-3xl border-4 border-[#915eff] flex justify-center items-start p-2'>
+          <div className='w-[25px] h-[45px] sm:w-[30px] sm:h-[54px] rounded-3xl border-4 border-[#915eff] flex justify-center items-start p-1 sm:p-2'>
             <motion.div
               animate={{
-                y: isMobile ? [0, 12, 0] : [0, 18, 0]
+                y: isMobile ? [0, 8, 0] : [0, 12, 0] // Smaller bounce on mobile
               }}
               transition={{
                 duration: isMobile ? 1 : 1.5,

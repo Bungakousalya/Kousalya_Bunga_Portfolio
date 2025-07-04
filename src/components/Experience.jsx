@@ -1,3 +1,4 @@
+// Experience.jsx
 import React from "react";
 import {
   VerticalTimeline,
@@ -12,6 +13,10 @@ import { experiences } from "../constants";
 import SectionWrapper from "../hoc/SectionWrapper";
 import { textVariant } from "../utils/motion";
 
+/**
+ * ExperienceCard component - Displays individual experience items
+ * @param {Object} experience - Experience data object
+ */
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
@@ -27,26 +32,28 @@ const ExperienceCard = ({ experience }) => {
           <img
             src={experience.icon}
             alt={experience.company_name}
-            className='w-[60%] h-[60%] object-contain'
+            className='w-[60%] h-[60%] object-contain' // Relative sizing based on container
           />
         </div>
       }
     >
       <div>
-        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
+        {/* Experience title with responsive text size */}
+        <h3 className='text-white text-[20px] sm:text-[24px] font-bold'>{experience.title}</h3>
         <p
-          className='text-secondary text-[16px] font-semibold'
+          className='text-secondary text-[14px] sm:text-[16px] font-semibold' // Smaller text on mobile
           style={{ margin: 0 }}
         >
           {experience.company_name}
         </p>
       </div>
 
-      <ul className='mt-5 list-disc ml-5 space-y-2'>
+      {/* Experience points list */}
+      <ul className='mt-4 sm:mt-5 list-disc ml-4 sm:ml-5 space-y-1 sm:space-y-2'> {/* Smaller spacing on mobile */}
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
+            className='text-white-100 text-[12px] sm:text-[14px] pl-1 tracking-wider' // Smaller text on mobile
           >
             {point}
           </li>
@@ -56,6 +63,9 @@ const ExperienceCard = ({ experience }) => {
   );
 };
 
+/**
+ * Experience component - Displays work experience timeline
+ */
 const Experience = () => {
   return (
     <>
@@ -68,7 +78,8 @@ const Experience = () => {
         </h2>
       </motion.div>
 
-      <div className='mt-20 flex flex-col'>
+      {/* Timeline container */}
+      <div className='mt-10 sm:mt-20 flex flex-col'> {/* Smaller margin on mobile */}
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard
