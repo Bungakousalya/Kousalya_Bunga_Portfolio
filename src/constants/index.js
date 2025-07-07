@@ -20,7 +20,10 @@ import {
   eduskills,
   carbon,
   threejs,
-  
+  amazon,
+   java,
+    leetcode,
+     ml
   
 
 } from "../assets";
@@ -171,32 +174,7 @@ const experiences = [
   
 ];
 
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
-];
+
 
 const projects = [
   {
@@ -227,4 +205,39 @@ const projects = [
   
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+const certifications=[
+    {
+      title: "Amazon certified",
+      issuer: "Zuvy",
+      date: "2025",
+      image: amazon,
+      skills: ["Basics of Python , AI"],
+      description:"Successfully completed Phase 1 of the Amazon Future Engineer Program, organized by Zuvy in collaboration with Amazon and Navgurukul. Selected from over 2000+ applicants, and later among the top 500 students out of 1000+ to qualify for Phase 2. Received a laptop as part of the program support."
+    },
+    {
+      title: "Java Basic",
+      issuer: "HackerRank",
+      date: "2025", 
+      image: java,
+      skills: ["Java", "OOP"],
+      description: "Completed the Java Basic certification on HackerRank, demonstrating proficiency in Java programming and object-oriented programming concepts."
+    },
+    {
+      title: "DSA using JAVA",
+      issuer: "LeetCode",
+      date: "2025",
+      image: leetcode,
+      skills: ["Problem Solving", "Algorithms"],
+      description: "Achieved the 50 day LeetCode Badge , showcasing consistency and dedication."
+    },
+    {
+      title: "Machine Learning",
+      issuer: "SRKR engineering college",
+      date: "2025",
+      image: ml,
+      skills: ["Machine Learning"],
+      description: "attended a comprehensive bootcamp on Machine Learning, covering key concepts and practical applications and developed a real world ml model."
+    }
+  ];
+
+export { services, technologies, experiences, certifications, projects };

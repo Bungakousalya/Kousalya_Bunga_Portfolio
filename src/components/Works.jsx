@@ -106,7 +106,7 @@ const Works = () => {
       </div>
 
       {/* Projects grid with responsive gap */}
-      <div className='mt-10 sm:mt-20 flex flex-wrap gap-4 sm:gap-7 justify-center'> {/* Smaller gap on mobile, centered */}
+      <div className='mt-10 sm:mt-20 flex flex-wrap gap-4 sm:gap-7 justify-start'> {/* Smaller gap on mobile, centered */}
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

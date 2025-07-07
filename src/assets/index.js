@@ -22,6 +22,10 @@ import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
 import threejs from "./tech/threejs.svg";
 
+import amazon from "./certificates/amazon.png";
+import java from "./certificates/java.png";
+import leetcode from "./certificates/leetcode.png";
+import ml from "./certificates/ml.png";
 
 import eduskills from "./company/eduskills.png";
 
@@ -33,6 +37,10 @@ export {
   logoo,
   backend,
   Aiml,
+  amazon,
+  java,
+  leetcode,
+  ml,
   CloudComputing,
   Frontend,
   mobile,
