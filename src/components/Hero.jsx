@@ -167,13 +167,14 @@ const Hero = () => {
             >
               Download Resume 📄
             </motion.a>
-            <motion.button
+            <motion.a
+              href="#contact"
               whileHover={{ scale: isMobile ? 1.02 : 1.05 }}
               whileTap={{ scale: 0.95 }}
               className='w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-transparent border-2 border-gray-400 text-gray-300 rounded-lg font-semibold hover:bg-gray-700 hover:border-gray-300 transition-all duration-300 text-sm sm:text-base'
             >
               Let's Connect 💬
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </div>

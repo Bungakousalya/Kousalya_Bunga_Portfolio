@@ -49,7 +49,7 @@ const About = () => {
       >
         I'm a passionate learner and aspiring developer, currently exploring the vast world of technology. <br /><br />
         I enjoy crafting dynamic web applications using React, Node.js, Express, and MongoDB — enhanced with immersive 3D experiences using Three.js and React Three Fiber. I also love solving problems with Data Structures and Algorithms (DSA) in Java, and diving into the realms of AI/ML to create models that address real-world challenges. <br /><br />
-        I'm now expanding my horizons in cloud computing, experimenting with tools to deploy scalable solutions. What excites me most is the opportunity to learn, adapt, and apply cutting-edge technologies. Let's work together to bring your ideas to life!
+        I'm now expanding my horizons in AI/ML, experimenting with tools to deploy scalable solutions. What excites me most is the opportunity to learn, adapt, and apply cutting-edge technologies. Let's work together to bring your ideas to life!
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10 justify-center'>

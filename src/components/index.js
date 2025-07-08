@@ -7,8 +7,8 @@ import Experience from "./Experience";
 import Works from "./Works";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
-import Certifications from "./certificates";
-
+import Certifications from "./certificates.jsx";
+import Footer from "./Footer";
 export {
   Hero,
   Navbar,
@@ -19,5 +19,6 @@ export {
   Contact,
   CanvasLoader,
   StarsCanvas,
-  Certifications
+  Certifications,
+  Footer
 };

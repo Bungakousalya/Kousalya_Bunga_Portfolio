@@ -54,7 +54,7 @@ const Contact = () => {
       <div className="flex flex-col gap-10 max-w-2xl">
         {/* Form Section */}
         <motion.div
-          variants={slideIn("up", "tween", 0.2, 1)}
+          variants={slideIn("left", "tween", 0.2, 1)}
           className="bg-black-100 p-5 sm:p-8 rounded-2xl w-full"
         >
           <p className={styles.sectionSubText}>Get in touch</p>
@@ -115,31 +115,8 @@ const Contact = () => {
           </form>
         </motion.div>
 
-        {/* Contact Info Cards - Below Form */}
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3  gap-6"
-        >
-          <div className="bg-gradient-to-br  from-blue-500 to-blue-700 rounded-xl border border-slate-700 p-6 text-center">
-            <div className="text-white text-3xl mb-4">✉️</div>
-            <h4 className="text-lg font-semibold text-white mb-2">Email</h4>
-            <p className="text-slate-100">hello@portfolio.cx</p>
-          </div>
-
-          <div className="bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl border border-slate-700 p-6 text-center">
-            <div className="text-white text-3xl mb-4">📞</div>
-            <h4 className="text-lg font-semibold text-white mb-2">Phone</h4>
-            <p className="text-slate-100">+1 (555) 123-4567</p>
-          </div>
-
-          <div className="bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl border border-slate-700 p-6 text-center sm:col-span-2 lg:col-span-1">
-            <div className="text-white text-3xl mb-4">📍</div>
-            <h4 className="text-lg font-semibold text-white mb-2">Location</h4>
-            <p className="text-slate-100">San Francisco, CA</p>
-          </div>
-        </motion.div>
+        
+       
       </div>
     </div>
   );
